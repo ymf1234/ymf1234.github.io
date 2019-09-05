@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-09-05T13:58:37.219Z</updated>
+    <updated>2019-09-05T13:59:44.289Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://ymf1234.github.io/post/centos-7-an-zhuang-mongodb">
         </link>
         <updated>2019-09-05T13:57:01.000Z</updated>
-        <content type="html"><![CDATA[<p>###安装Mongodb</p>
+        <content type="html"><![CDATA[<h3 id="安装mongodb">安装Mongodb</h3>
 ]]></content>
     </entry>
     <entry>
