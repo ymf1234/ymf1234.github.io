@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-09-09T05:00:38.170Z</updated>
+    <updated>2019-09-09T05:22:55.397Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -100,10 +100,9 @@ net:
 </code></pre>
 <p><strong>修改绑定ip默认127.0.0.1只允许本地连接， 所以修改为bindIp:0.0.0.0, 退出保存</strong></p>
 <br/>
-### 2. 重启mongodb服务
-```
-sudo service mongod restart 
-```
+<h3 id="2-重启mongodb服务">2. 重启mongodb服务</h3>
+<pre><code>sudo service mongod restart 
+</code></pre>
 <h3 id="3-开放对外端口">3. 开放对外端口</h3>
 <p><strong>方法一</strong></p>
 <pre><code>systemctl status firewalld  # 查看防火墙状态
@@ -121,7 +120,7 @@ firewall-cmd --zone=public --query-port=27017/tcp # 查看端口号是否开放�
 </code></pre>
 <p><strong>连接到自定义的用户</strong></p>
 <ol>
-<li>创建用户，设置账号，密码，权限</li>
+<li><strong>创建用户，设置账号，密码，权限</strong></li>
 </ol>
 <pre><code>// admin数据库
 &gt; use admin
@@ -136,7 +135,7 @@ switched to db test
 Successfully added user: { &quot;user&quot; : &quot;root&quot;, &quot;roles&quot; : [ &quot;root&quot; ] }
 </code></pre>
 <ol start="2">
-<li>修改mongodb.conf文件，启用身份验证</li>
+<li><strong>修改mongodb.conf文件，启用身份验证</strong></li>
 </ol>
 <pre><code>vim /etc/mongod.conf
 
@@ -144,12 +143,12 @@ security:
   authorization: &quot;enabled&quot;   # disable or enabled
 </code></pre>
 <ol start="3">
-<li>重启MongoDB</li>
+<li><strong>重启MongoDB</strong></li>
 </ol>
 <pre><code>sudo service mongod restart 
 </code></pre>
 <ol start="4">
-<li>用户认证</li>
+<li><strong>用户认证</strong></li>
 </ol>
 <pre><code>&gt; use admin
 switched to db admin
@@ -161,7 +160,7 @@ db.updateUser(user, writeConcern) # 更新用户
 db.dropUser('test') # 删除用户
 </code></pre>
 <ol start="5">
-<li>远程连接</li>
+<li><strong>远程连接</strong></li>
 </ol>
 <pre><code>// 终端连接
 mongo 10.128.218.14:27017:27017/database -u username -p password
@@ -171,62 +170,15 @@ mongoose.connect('mongodb://username:password@host:port/database?options...', {u
 
 // 通过客户端连接
 </code></pre>
-<br/>
-### 用户权限角色说明
-<table>
-<tr>
-<th>规则</th>
-<th>说明</th>
-</tr>
-<tr>
-<td>root</td>
-<td>只在admin数据库中可用。超级账号，超级权限</td>
-</tr>
-<tr>
-<td>Read</td>
-<td>允许用户读取指定数据库</td>
-</tr>
-<tr>
-<td>readWrite</td>
-<td>允许用户读写指定数据库</td>
-</tr>
-<tr>
-<td>dbAdmin</td>
-<td>允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile</td>
-</tr>
-<tr>
-<td>userAdmin</td>
-<td>允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户</td>
-</tr>
-<tr>
-<td>clusterAdmin</td>
-<td>只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限</td>
-</tr>
-<tr>
-<td>readAnyDatabase</td>
-<td>只在admin数据库中可用，赋予用户所有数据库的读权限</td>
-</tr>
-<tr>
-<td>readWriteAnyDatabase</td>
-<td>只在admin数据库中可用，赋予用户所有数据库的读写权限</td>
-</tr>
-<tr>
-<td>userAdminAnyDatabase</td>
-<td>只在admin数据库中可用，赋予用户所有数据库的userAdmin权限</td>
-</tr>
-<tr>
-<td>dbAdminAnyDatabase</td>
-<td>只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限</td>
-</tr>
-</table>
+<h3 id="用户权限角色说明">用户权限角色说明</h3>
 <h1 id="参考文献">参考文献</h1>
 <ul>
-<li><a href="https://link.juejin.im?target=https%3A%2F%2Fblog.csdn.net%2Fu011305680%2Farticle%2Fdetails%2F52767230">yum使用详解</a></li>
-<li><a href="https://link.juejin.im?target=https%3A%2F%2Fdocs.mongodb.com%2Fmanual%2Ftutorial%2Finstall-mongodb-on-red-hat%2F">Install MongoDB Community Edition on Red Hat Enterprise or CentOS Linux</a></li>
-<li><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.linuxidc.com%2FLinux%2F2017-11%2F148495.htm">CentOS 7上MongoDB数据库安装和卸载</a></li>
-<li><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.jianshu.com%2Fp%2F03aff57dfe46">ubuntu mongodb远程连接配置</a></li>
-<li><a href="https://link.juejin.im?target=https%3A%2F%2Fmedium.com%2Fmongoaudit%2Fhow-to-enable-authentication-on-mongodb-b9e8a924efac">How to Enable Authentication on MongoDB</a></li>
-<li><a href="https://link.juejin.im?target=https%3A%2F%2Fdocs.mongodb.com%2Fmanual%2Freference%2Fmethod%2Fdb.createUser%2F">db.createUser()</a></li>
+<li>** <a href="https://link.juejin.im?target=https%3A%2F%2Fblog.csdn.net%2Fu011305680%2Farticle%2Fdetails%2F52767230">yum使用详解</a>**</li>
+<li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fdocs.mongodb.com%2Fmanual%2Ftutorial%2Finstall-mongodb-on-red-hat%2F">Install MongoDB Community Edition on Red Hat Enterprise or CentOS Linux</a></strong></li>
+<li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.linuxidc.com%2FLinux%2F2017-11%2F148495.htm">CentOS 7上MongoDB数据库安装和卸载</a></strong></li>
+<li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.jianshu.com%2Fp%2F03aff57dfe46">ubuntu mongodb远程连接配置</a></strong></li>
+<li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fmedium.com%2Fmongoaudit%2Fhow-to-enable-authentication-on-mongodb-b9e8a924efac">How to Enable Authentication on MongoDB</a></strong></li>
+<li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fdocs.mongodb.com%2Fmanual%2Freference%2Fmethod%2Fdb.createUser%2F">db.createUser()</a></strong></li>
 </ul>
 ]]></content>
     </entry>
