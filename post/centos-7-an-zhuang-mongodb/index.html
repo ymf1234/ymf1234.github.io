@@ -324,9 +324,59 @@ mongoose.connect('mongodb://username:password@host:port/database?options...', {u
 // 通过客户端连接
 </code></pre>
 <h3 id="用户权限角色说明">用户权限角色说明</h3>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>root</td>
+<td>只在admin数据库中可用。超级账号，超级权限</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>允许用户读取指定数据库</td>
+</tr>
+<tr>
+<td>readWrite</td>
+<td>允许用户读写指定数据库</td>
+</tr>
+<tr>
+<td>dbAdmin</td>
+<td>允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile</td>
+</tr>
+<tr>
+<td>userAdmin</td>
+<td>允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户</td>
+</tr>
+<tr>
+<td>clusterAdmin</td>
+<td>只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限</td>
+</tr>
+<tr>
+<td>readAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的读权限</td>
+</tr>
+<tr>
+<td>readWriteAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的读写权限</td>
+</tr>
+<tr>
+<td>userAdminAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的userAdmin权限</td>
+</tr>
+<tr>
+<td>dbAdminAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限</td>
+</tr>
+</tbody>
+</table>
 <h1 id="参考文献">参考文献</h1>
 <ul>
-<li>** <a href="https://link.juejin.im?target=https%3A%2F%2Fblog.csdn.net%2Fu011305680%2Farticle%2Fdetails%2F52767230">yum使用详解</a>**</li>
+<li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fblog.csdn.net%2Fu011305680%2Farticle%2Fdetails%2F52767230">yum使用详解</a></strong></li>
 <li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fdocs.mongodb.com%2Fmanual%2Ftutorial%2Finstall-mongodb-on-red-hat%2F">Install MongoDB Community Edition on Red Hat Enterprise or CentOS Linux</a></strong></li>
 <li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.linuxidc.com%2FLinux%2F2017-11%2F148495.htm">CentOS 7上MongoDB数据库安装和卸载</a></strong></li>
 <li><strong><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.jianshu.com%2Fp%2F03aff57dfe46">ubuntu mongodb远程连接配置</a></strong></li>
