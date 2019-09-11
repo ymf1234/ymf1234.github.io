@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-09-09T09:28:25.686Z</updated>
+    <updated>2019-09-11T05:39:39.067Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -10,6 +10,97 @@
     <logo>https://ymf1234.github.io/images/avatar.png</logo>
     <icon>https://ymf1234.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea1</rights>
+    <entry>
+        <title type="html"><![CDATA[Angular创建组件]]></title>
+        <id>https://ymf1234.github.io/post/angular-chuang-jian-zu-jian</id>
+        <link href="https://ymf1234.github.io/post/angular-chuang-jian-zu-jian">
+        </link>
+        <updated>2019-09-11T05:38:55.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="创建组件">创建组件</h1>
+<pre><code class="language-ng">ng generate component [name]
+ng g component [name]
+</code></pre>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<pre><code class="language-shell">ng g component module-core/data-sync-config-management/data-sync-config-list
+
+CREATE src/app/module-core/data-sync-config-management/data-sync-config-list/data-sync-config-list.component.less (0 bytes)
+CREATE src/app/module-core/data-sync-config-management/data-sync-config-list/data-sync-config-list.component.html (40 bytes)
+CREATE src/app/module-core/data-sync-config-management/data-sync-config-list/data-sync-config-list.component.spec.ts (715 bytes)
+CREATE src/app/module-core/data-sync-config-management/data-sync-config-list/data-sync-config-list.component.ts (327 bytes)
+UPDATE src/app/module-core/core.module.ts (4539 bytes)
+</code></pre>
+<hr>
+<blockquote>
+<p>示例创建了mydemo的组件。</p>
+</blockquote>
+<ol>
+<li>在app的目录下新建了data-sync-config（即组件名）文件夹</li>
+<li>在data-sync-config目录下分别创建data-sync-config-list组件的相关文件</li>
+<li>html：data-sync-config-list.component.html</li>
+<li>css：data-sync-config-list.component.less</li>
+<li>spec：用于测试测data-sync-config-list.componnent.spec.ts</li>
+<li>组件：data-sync-config-list.component.ts</li>
+<li>更新app.module.ts，添加了MydemoComponent到模块的declarations声明里。</li>
+</ol>
+<hr>
+<blockquote>
+<p>直接创建组件</p>
+</blockquote>
+<p>指令默认会创建以组件命名的文件夹，可以使用--flat选项直接在当前目录创建组件。</p>
+<pre><code class="language-shell"> ng g component --flat mydemo1
+ create src/app/mydemo1.component.html (26 bytes)
+ create src/app/mydemo1.component.spec.ts (635 bytes)
+ create src/app/mydemo1.component.ts (274 bytes)
+ create src/app/mydemo1.component.scss (0 bytes)
+ update src/app/app.module.ts (749 bytes)
+</code></pre>
+<hr>
+<blockquote>
+<p>指定组件所属组件</p>
+</blockquote>
+<p>指令默认会把组件添加到app.module.ts的声明里，可以使用--module（简写-m）指定组件所属模块。</p>
+<pre><code class="language-shell"> ng g component --flat -m mymodule mydemo2
+ create src/app/mydemo2.component.html (26 bytes)
+ create src/app/mydemo2.component.spec.ts (635 bytes)
+ create src/app/mydemo2.component.ts (274 bytes)
+ create src/app/mydemo2.component.scss (0 bytes)
+ update src/app/mymodule/mymodule.module.ts (265 bytes)
+</code></pre>
+<hr>
+<blockquote>
+<p>内嵌模板和样式</p>
+</blockquote>
+<p>指令默认会新建html和css文件，使用--inline-style(简写-is)指定内嵌样式，使用--inline-template(简写-it)指定内嵌模板。</p>
+<pre><code class="language-shell"> ng g component --flat --inline-style --inline-template mydemo3
+ create src/app/mydemo3.component.spec.ts (635 bytes)
+ create src/app/mydemo3.component.ts (259 bytes)
+ update src/app/app.module.ts (827 bytes)
+</code></pre>
+<hr>
+<blockquote>
+<p>不创建测试文件</p>
+</blockquote>
+<p>指令默认会新建spec.ts文件。使用--spec=false不创建测试文件</p>
+<pre><code class="language-shell"> ng g component --flat --spec=false mydemo5
+ create src/app/mydemo5.component.html (26 bytes)
+ create src/app/mydemo5.component.ts (274 bytes)
+ create src/app/mydemo5.component.scss (0 bytes)
+ update src/app/app.module.ts (983 bytes)
+</code></pre>
+<hr>
+<blockquote>
+<p>其他指令</p>
+</blockquote>
+<pre><code class="language-shell">--app (简写-a) ：指定app名称，默认值app
+--change-detection (简写-cd)：指定变化检测策略
+--export：指定是否在声明的模块导出组件，默认值false
+--skip-import：是否忽略在模块添加组件声明，默认为false
+--view-encapsulation (简写-ve)：指定view encapsulation策略。
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Centos 7安装MongoDB]]></title>
         <id>https://ymf1234.github.io/post/centos-7-an-zhuang-mongodb</id>
