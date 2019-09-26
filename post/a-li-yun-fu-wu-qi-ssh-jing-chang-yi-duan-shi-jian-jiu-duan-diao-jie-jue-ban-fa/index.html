@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+      
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -28,6 +28,12 @@
 
 <!-- Comment -->
 
+    
+        <link href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css" rel="stylesheet">
+    
+
+    
+
 
 <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 
@@ -35,7 +41,7 @@
 
   </head>
   <body>
-    
+  
 <div id="fh5co-offcanvas">
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
@@ -146,74 +152,74 @@
     </div>
 </header>
 
-    <div class="container-fluid">
-      <div class="row fh5co-post-entry">
 
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-            <figure class="img-box">
-              <a href="https://ymf1234.github.io/post/a-li-yun-fu-wu-qi-ssh-jing-chang-yi-duan-shi-jian-jiu-duan-diao-jie-jue-ban-fa">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://ymf1234.github.io/post/a-li-yun-fu-wu-qi-ssh-jing-chang-yi-duan-shi-jian-jiu-duan-diao-jie-jue-ban-fa">阿里云服务器ssh经常一段时间就断掉解决办法</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2019-09-25</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-            <figure class="img-box">
-              <a href="https://ymf1234.github.io/post/angular-chuang-jian-zu-jian">
-                
-                  <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1568190656221&amp;di=2403565a8a9bfbba11002329d15ae100&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201506%2F29%2F20150629140020_3sXkE.jpeg" alt="Angular创建组件" class="img-responsive">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://ymf1234.github.io/post/angular-chuang-jian-zu-jian">Angular创建组件</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2019-09-11</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-            <figure class="img-box">
-              <a href="https://ymf1234.github.io/post/centos-7-an-zhuang-mongodb">
-                
-                  <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1568191054977&amp;di=f299ac64b30bd1f904079a5f57c8ca75&amp;imgtype=0&amp;src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20180804%2F99da8ef2d4a0495e89a9d3de48ac53f1.jpeg" alt="Centos 7安装MongoDB" class="img-responsive">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://ymf1234.github.io/tag/5s85Ispo6" class="tag">安装环境, </a>
-                    
-                        <a href="https://ymf1234.github.io/tag/pwZlkilx3" class="tag">数据库, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://ymf1234.github.io/post/centos-7-an-zhuang-mongodb">Centos 7安装MongoDB</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2019-09-05</span>
-          </article>
-        
-            <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
+<!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
+<!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
 
+  <div class="container-fluid">
+      <div class="row fh5co-post-entry single-entry">
+          <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+              <figure class="animate-box">
+                  
+              </figure>
+              <span class="fh5co-meta animate-box">
+                  
+              </span>
+              <h2 class="fh5co-article-title animate-box">阿里云服务器ssh经常一段时间就断掉解决办法</h2>
+              <span class="fh5co-meta fh5co-date animate-box">2019-09-25</span>
+
+              <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                  <div class="row">
+                      <div class="col-md-12 animate-box post-content">
+                          <p> <h1 id="vim-etcsshsshd_config">vim /etc/ssh/sshd_config</h1>
+<p>找到下面两行</p>
+<pre><code class="language-shell">ClientAliveInterval 0
+ClientAliveCountMax 3
+</code></pre>
+<p>去掉注释，改成</p>
+<pre><code class="language-shell">ClientAliveInterval 120
+ClientAliveCountMax 0
+</code></pre>
+<p>这两行的意思分别是</p>
+<p>1、客户端每隔多少秒向服务发送一个心跳数据</p>
+<p>2、客户端多少秒没有相应，服务器自动断掉连接</p>
+<p>重启sshd服务</p>
+<p>#service sshd restart</p>
+ </p>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 animate-box">
+                          
+                              <div class="next-post">
+                                  <div class="next">下一篇</div>
+                                  <a href="https://ymf1234.github.io/post/angular-chuang-jian-zu-jian">
+                                      <h3 class="post-title">
+                                          Angular创建组件
+                                      </h3>
+                                  </a>
+                              </div>
+                          
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 animate-box">
+                          
+                              
+                                  <div id="gitalk-container"></div>
+                              
+
+                              
+                          
+                      </div>
+                  </div>
+              </div>
+
+          </article>
       </div>
-
-      <div class="pagination-box animate-box">
-        
-        
-      </div>
-    </div>
+  </div>
 
     
 <footer id="fh5co-footer">
@@ -237,6 +243,29 @@
 <script type="application/javascript">
     hljs.initHighlightingOnLoad();
 </script>
+
+
+
+    
+        <script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+        <script>
+
+            var gitalk = new Gitalk({
+                clientID: '8dde1b0c809e1f8d1036',
+                clientSecret: '133fa5aea3504f48c3cacb09189295478a979612',
+                repo: 'ymf1234.github.io',
+                owner: 'ymf1234',
+                admin: ['ymf1234'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+
+        </script>
+    
+
+    
 
 
 
