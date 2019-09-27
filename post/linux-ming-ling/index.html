@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-    
+  <head>
+      
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -28,14 +28,20 @@
 
 <!-- Comment -->
 
+    
+        <link href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css" rel="stylesheet">
+    
+
+    
+
 
 <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 
 <link crossorigin="anonymous" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" href="https://lib.baomitu.com/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
 
-</head>
-<body>
-
+  </head>
+  <body>
+  
 <div id="fh5co-offcanvas">
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
@@ -151,109 +157,107 @@
 </header>
 
 
-<div class="container-fluid">
-    <div class="row fh5co-post-entry single-entry">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+<!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
+<!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
 
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-12 col-xs-offset-0 text-center content-article">
+  <div class="container-fluid">
+      <div class="row fh5co-post-entry single-entry">
+          <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+              <figure class="animate-box">
+                  
+                      <img src="http://pic.netbian.com/uploads/allimg/161014/235925-14764607659536.jpg" alt="Linux命令" class="img-responsive">
+                  
+              </figure>
+              <span class="fh5co-meta animate-box">
+                  
+              </span>
+              <h2 class="fh5co-article-title animate-box">Linux命令</h2>
+              <span class="fh5co-meta fh5co-date animate-box">2019-09-27</span>
 
-                <div class="row">
+              <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                  <div class="row">
+                      <div class="col-md-12 animate-box post-content">
+                          <p> <h3 id="ln命令创建链接以及链接的删除和更新">ln命令创建链接以及链接的删除和更新</h3>
+<h4 id="创建软连接">创建软连接</h4>
+<pre><code class="language-shell">ln -s [源文件或目录] [目标文件或目录]
 
-                    
-                    <h2 class="text-center archives-title">
-                        <i class="fa fa-archive"></i> 文章归档
-                    </h2>
+# 必须是全路径   
+# 源文件或目录: /usr/share/nginx/html/
+# 目标文件或目录 ~/html   
+ln -s /usr/share/nginx/html/ ~/html    # 创建/usr/share/nginx/html/  引向 ~/html  文件夹 
+</code></pre>
+<h4 id="删除软链接">删除软链接</h4>
+<pre><code class="language-shell"> rm –rf 软链接名称
+ 
+ rm -rf ~/html
+</code></pre>
+<h4 id="修改软连接">修改软连接</h4>
+<pre><code class="language-shell">ln –snf  [新的源文件或目录]  [目标文件或目录]
 
-                    
-                    <div class="row post-group">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-center post-year tag-title">
-                            <h3>2019</h3>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-left">
-                            <ul class="post-list">
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://ymf1234.github.io/post/linux-ming-ling" target="_blank">
-                                        <span class="post-title">Linux命令</span>
-                                        <span class="post-day">2019-09-27</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://ymf1234.github.io/post/python-di-san-fang-ku-pymysql-shi-yong" target="_blank">
-                                        <span class="post-title">python第三方库pymysql使用</span>
-                                        <span class="post-day">2019-09-27</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://ymf1234.github.io/post/docker-ji-ben-cao-zuo" target="_blank">
-                                        <span class="post-title">Docker基本操作</span>
-                                        <span class="post-day">2019-09-27</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://ymf1234.github.io/post/docker-ji-ben-gai-nian" target="_blank">
-                                        <span class="post-title">Docker基本概念</span>
-                                        <span class="post-day">2019-09-27</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://ymf1234.github.io/post/a-li-yun-fu-wu-qi-ssh-jing-chang-yi-duan-shi-jian-jiu-duan-diao-jie-jue-ban-fa" target="_blank">
-                                        <span class="post-title">阿里云服务器ssh经常一段时间就断掉解决办法</span>
-                                        <span class="post-day">2019-09-25</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://ymf1234.github.io/post/angular-chuang-jian-zu-jian" target="_blank">
-                                        <span class="post-title">Angular创建组件</span>
-                                        <span class="post-day">2019-09-11</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://ymf1234.github.io/post/centos-7-an-zhuang-mongodb" target="_blank">
-                                        <span class="post-title">Centos 7安装MongoDB</span>
-                                        <span class="post-day">2019-09-05</span>
-                                    </a>
-                                </li>
-                                
-                            
-                            </ul>
-                        </div>
-                    </div>
-                    
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+这将会修改原有的链接地址为新的地址
 
 
+# 创建一个软链接
+
+ln –s  /usr/share/nginx/html/  ~/html
+
+# 修改指向的新路径
+
+ln –snf  /usr/share/nginx/html1/  ~/html
+</code></pre>
+<h3 id="ln-注意">ln 注意</h3>
+<blockquote>
+<p>这里有三点要注意：
+第一，ln命令会保持每一处链接文件的同步性，也就是说，不论你改动了哪一处，其它的文件都会发生相同的变化；
+第二，ln的链接又软链接 和硬链接两种，
+         软链接就是ln -s src  dst,它只会在你选定的位置上生成一个文件的镜像，不会占用磁盘空间，
+         硬链接ln src  dst,没有参数-s, 它会在你选定的位置上生成一个和源文件大小相同的文件，无论是软链接还是硬链接，文件都保持同步变化。 
+第三，指向一个文件的所有 硬链接都删掉的话文件的内容才会被删掉
+软链接只要删掉了源链接文件，软链接也就失效了</p>
+</blockquote>
+ </p>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 animate-box">
+                          
+                              <div class="next-post">
+                                  <div class="next">下一篇</div>
+                                  <a href="https://ymf1234.github.io/post/python-di-san-fang-ku-pymysql-shi-yong">
+                                      <h3 class="post-title">
+                                          python第三方库pymysql使用
+                                      </h3>
+                                  </a>
+                              </div>
+                          
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 animate-box">
+                          
+                              
+                                  <div id="gitalk-container"></div>
+                              
+
+                              
+                          
+                      </div>
+                  </div>
+              </div>
+
+          </article>
+      </div>
+  </div>
+
+    
 <footer id="fh5co-footer">
   <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
 </footer>
 
 
-<!-- jQuery -->
+    <!-- jQuery -->
 <script src="https://ymf1234.github.io/media/scripts/_vendors/jquery.min.js"></script>
 <!-- jQuery Easing -->
 <script src="https://ymf1234.github.io/media/scripts/_vendors/jquery.easing.1.3.js"></script>
@@ -272,6 +276,29 @@
 
 
 
+    
+        <script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+        <script>
 
-</body>
+            var gitalk = new Gitalk({
+                clientID: '8dde1b0c809e1f8d1036',
+                clientSecret: '133fa5aea3504f48c3cacb09189295478a979612',
+                repo: 'ymf1234.github.io',
+                owner: 'ymf1234',
+                admin: ['ymf1234'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+
+        </script>
+    
+
+    
+
+
+
+
+  </body>
 </html>
