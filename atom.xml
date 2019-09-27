@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-09-27T07:10:30.642Z</updated>
+    <updated>2019-09-27T09:15:25.178Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://ymf1234.github.io/images/avatar.png</logo>
     <icon>https://ymf1234.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea1</rights>
+    <entry>
+        <title type="html"><![CDATA[Composer]]></title>
+        <id>https://ymf1234.github.io/post/composer</id>
+        <link href="https://ymf1234.github.io/post/composer">
+        </link>
+        <updated>2019-09-27T09:13:07.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="composer查看系统全局配置">composer查看系统全局配置：</h1>
+<blockquote>
+<p>composer config -l -g</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Linux命令]]></title>
         <id>https://ymf1234.github.io/post/linux-ming-ling</id>
