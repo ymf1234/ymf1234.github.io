@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-09-29T03:01:42.316Z</updated>
+    <updated>2019-09-29T03:04:25.965Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>php docker mysql python</subtitle>
     <logo>https://ymf1234.github.io/images/avatar.png</logo>
     <icon>https://ymf1234.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea1</rights>
@@ -302,15 +302,6 @@ ln –snf  /usr/share/nginx/html1/  ~/html
 a = pymysql.connect(host=&quot;127.0.0.1&quot;, port=3306, user=&quot;root&quot;, passwd='', db=&quot;pymysql&quot;)
 a.cursor()
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Docker基本操作]]></title>
-        <id>https://ymf1234.github.io/post/docker-ji-ben-cao-zuo</id>
-        <link href="https://ymf1234.github.io/post/docker-ji-ben-cao-zuo">
-        </link>
-        <updated>2019-09-27T05:44:30.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="docker">Docker</h1>
 ]]></content>
     </entry>
     <entry>
