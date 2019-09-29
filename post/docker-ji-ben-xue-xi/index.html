@@ -167,56 +167,238 @@
           <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
               <figure class="animate-box">
                   
-                      <img src="http://pic.netbian.com/uploads/allimg/161014/235925-14764607659536.jpg" alt="Linux命令" class="img-responsive">
+                      <img src="http://pic.netbian.com/uploads/allimg/190102/231836-15464423163cb6.jpg" alt="Docker基本学习" class="img-responsive">
                   
               </figure>
               <span class="fh5co-meta animate-box">
                   
+                      <div class="tag-container">
+                          
+                              <a href="https://ymf1234.github.io/tag/LXWtA2Gym" class="tag">Docker, </a>
+                          
+                      </div>
+                  
               </span>
-              <h2 class="fh5co-article-title animate-box">Linux命令</h2>
-              <span class="fh5co-meta fh5co-date animate-box">2019-09-27</span>
+              <h2 class="fh5co-article-title animate-box">Docker基本学习</h2>
+              <span class="fh5co-meta fh5co-date animate-box">2019-09-29</span>
 
               <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
                   <div class="row">
                       <div class="col-md-12 animate-box post-content">
-                          <p> <h3 id="ln命令创建链接以及链接的删除和更新">ln命令创建链接以及链接的删除和更新</h3>
-<h4 id="创建软连接">创建软连接</h4>
-<pre><code class="language-shell">ln -s [源文件或目录] [目标文件或目录]
-
-# 必须是全路径   
-# 源文件或目录: /usr/share/nginx/html/
-# 目标文件或目录 ~/html   
-ln -s /usr/share/nginx/html/ ~/html    # 创建/usr/share/nginx/html/  引向 ~/html  文件夹 
+                          <p> <h2 id="一-安装docker">一、安装Docker</h2>
+<p>环境：CentOS7
+首先更新yum: <code>sudo yum -y update</code>
+然后执行安装命令：<code>sudo yum install -y docker</code>
+Docker 默认位置：<code>/var/lib/docker</code></p>
+<h2 id="二-管理docker">二、管理Docker</h2>
+<ol>
+<li><strong>管理 Docker 命令</strong></li>
+</ol>
+<p>启用 Docker</p>
+<pre><code class="language-shell">sudo systemctl start docker
 </code></pre>
-<h4 id="删除软链接">删除软链接</h4>
-<pre><code class="language-shell"> rm –rf 软链接名称
- 
- rm -rf ~/html
+<p>重启 Docker</p>
+<pre><code class="language-shell">sudo systemctl restart docker
+#使用命令查看Docker是否启动
+ps -ef | grep docker 
 </code></pre>
-<h4 id="修改软连接">修改软连接</h4>
-<pre><code class="language-shell">ln –snf  [新的源文件或目录]  [目标文件或目录]
-
-这将会修改原有的链接地址为新的地址
-
-
-# 创建一个软链接
-
-ln –s  /usr/share/nginx/html/  ~/html
-
-# 修改指向的新路径
-
-ln –snf  /usr/share/nginx/html1/  ~/html
+<p>关闭 Docker</p>
+<pre><code class="language-shell">sudo systemctl stop docker
 </code></pre>
-<h3 id="ln-注意">ln 注意</h3>
+<ol start="2">
+<li><strong>Docker流程</strong></li>
+</ol>
+<p>![avatar]https://cdn.learnku.com/uploads/images/201909/10/48012/tnlEDMYz0M.png!/fw/1240)</p>
+<p>3、<strong>给当前用户赋予执行 docker 命令权限</strong></p>
+<pre><code class="language-shell">#1、创建docker用户组
+sudo groupadd docker
+#2、将当前用户添加到docker组中 查看当前用户
+sudo gpasswd -a${user} docker
+#3、重启docker进程
+sudo systemctl restart docker
+#4、重新登录Xshell
+</code></pre>
+<h2 id="三-镜像加速器">三、镜像加速器</h2>
+<ol>
+<li>
+<p><a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">阿里云镜像加速地址</a></p>
 <blockquote>
-<p>这里有三点要注意：
-第一，ln命令会保持每一处链接文件的同步性，也就是说，不论你改动了哪一处，其它的文件都会发生相同的变化；
-第二，ln的链接又软链接 和硬链接两种，
-         软链接就是ln -s src  dst,它只会在你选定的位置上生成一个文件的镜像，不会占用磁盘空间，
-         硬链接ln src  dst,没有参数-s, 它会在你选定的位置上生成一个和源文件大小相同的文件，无论是软链接还是硬链接，文件都保持同步变化。 
-第三，指向一个文件的所有 硬链接都删掉的话文件的内容才会被删掉
-软链接只要删掉了源链接文件，软链接也就失效了</p>
+<p>地址：https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors</p>
 </blockquote>
+</li>
+<li>
+<p>配置镜像加速器</p>
+</li>
+</ol>
+<p>您可以通过修改daemon配置文件/etc/docker/daemon.json来使用加速器</p>
+<pre><code class="language-shell"># 创建目录   mkdir -p ：递归创建目录，即使上级目录不存在，会按目录层级自动创建目录
+sudo mkdir -p /etc/docker
+
+# tee命令主要被用来向standout(标准输出流，通常是命令执行窗口）输出的同时也将内容输出到文件
+sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'
+{
+ &quot;registry-mirrors&quot;: [&quot;https://9o2noz1w.mirror.aliyuncs.com&quot;]
+}
+EOF
+
+# 添加配置文件后需要加载
+sudo systemctl daemon-reload
+
+# 重启docker
+sudo systemctl restart docker
+</code></pre>
+<h2 id="四-镜像">四、<strong>镜像</strong></h2>
+<ol>
+<li><strong>在线安装镜像</strong></li>
+</ol>
+<pre><code class="language-shell">#1、搜索java镜像
+docker search java
+#2、从dockerhub拉取并安装java镜像
+docker pull docker.io/java
+#安装指定版本镜像
+#docker pull mysql:8.0
+</code></pre>
+<ol start="2">
+<li><strong>镜像相关基础命令</strong></li>
+</ol>
+<pre><code class="language-shell">#查看所有镜像
+docker images
+#修改镜像名称
+docker tag oldname newname
+#备份镜像 (镜像导出)
+docker sava java&gt;/home/java.tar.gz
+#镜像导入
+docker load &lt;/home/java.tar.gz
+#删除镜像
+docker rmi 镜像名或镜像ID
+#查看镜像依赖
+docker history imageid
+</code></pre>
+<ol start="3">
+<li><strong>创建自己的镜像</strong></li>
+</ol>
+<pre><code class="language-shell">#在test文件夹下创建一个Dockerfile，并在文件中写入
+#FROM centos
+#CMD echo &quot;hello-docker!!!&quot;
+sudo vi Dockerfile
+#-t代表IMAGE的名称， .代表在本文件夹下的Dockerfile
+docker build -t hello-docker .
+</code></pre>
+<ol start="4">
+<li><strong>Dockerfile 语法</strong></li>
+</ol>
+<pre><code class="language-shell">#选取baseimage
+FROM 
+#scratch表示不依赖任何image，从头制作
+FROM scratch
+
+#镜像作者信息
+LABEL
+LABEL maintainer = &quot;LiLi@qq.com&quot;
+LABEL version = &quot;1.0&quot;
+LABEL description = &quot;this is description&quot;
+
+#执行命令并创建新的image Layer
+RUN
+RUN yum update &amp;&amp; yum install -y vom \
+    python-dev #反斜线换行
+RUN apt-get update &amp;&amp; apt-get install -y perl \
+    pwgen --no-install-recommends &amp;&amp; rm -rf \
+    /var/lib/apt/lists/* #注意清理cache
+RUN /bin/bash -c'source $HOME/.bashrc;echo$HOME'
+
+#设定当前工作目录，类似于cd命令
+WORKDIR
+WORKDIR /root #如果没有会自动创建root
+WORKDIR demo
+RUN pwd #输出结果/root/demo
+
+#将本地文件添加到docker image中
+ADD and COPY
+ADD hello / #将hello文件添加到跟目录
+ADD test.tar.gz / #添加到根目录并解压
+WORKDIR /root ADD hello test/ #添加到/root/test中
+WORKDIR /root COPY hello test/
+#ADD与COPY区别
+ADD除了COPY还可以对tar.gz解压缩
+
+#设置常量
+ENV name = &quot;docker&quot;
+#取值
+$name
+
+#存储和网络
+VOLUME:存储
+VOLUME home:/soft
+-v /home:/soft
+EXPOSE:网络相关
+
+#设置容器启动后默认执行的命令和参数
+#如果docker run指定了其他命令，CMD命令会被忽略
+#如果定义了多个CMD，只有最后一个会执行
+CMD
+
+#设置容器启动时运行的命令
+#让容器以应用程序或者服务的形式运行
+#不会被忽略，一定会执行
+ENTRYPOINT
+
+</code></pre>
+<ol start="5">
+<li><strong>Docker 资料</strong></li>
+</ol>
+<blockquote>
+<p>Docker 的 GitHub:[https://github.com/docker-library/]
+Docker 的 文档：[https://docs.docker.com]</p>
+</blockquote>
+<h2 id="六-容器">六、容器</h2>
+<ol>
+<li><strong>容器基础命令</strong></li>
+</ol>
+<pre><code class="language-shell">#启动容器
+docker run
+#-it:代表交互式运行，进入docker环境
+#--name代表容器名称
+#-p 9000:8000 将宿主机9000端口映射到docker容器的800端口
+#-v 将宿主机/home/project映射到容器的/soft目录
+#--privileged 代表docker拥有操作宿主机文件的最高权限
+docker run -it --name 容器名称 镜像名称 bash
+docker run -it -p 9000:8080 -p 9001:8888  --name 容器名称  镜像名称  bash 
+docker run -it -v /home/project:/soft --privileged  --name 容器名称 镜像名称 bash
+#首先在原环境下mkdir一个test文件
+#进入容器后在soft文件夹下创建一个touch docker.txt，并用echo &quot;hello-docker&quot; &gt; docker.txt写入txt文件中，使用cat命令查看所写的内容。结果：宿主机的/usr/gy/test中有文件hello.txt
+
+#查看运行的容器
+docker container ls -a
+docker ps -a
+#退出容器
+exit
+#暂停容器
+docker pause 容器名称
+#恢复容器运行
+docker unpause 容器名称
+#停止容器
+docker stop 容器名称
+#重新启动容器
+docker start -i 容器名称
+#删除容器，可以使用&quot;docker rm 容器id&quot;来删除一个终止状态的容器；若想要删除一个运行中的容器，需要加参数-f
+sudo docker rm -f 容器id
+#删除所有容器
+docker rm `docker ps -a -q`
+#删除所有退出的容器
+docker rm $(docker container ls -f &quot;status=exited&quot; -q)
+</code></pre>
+<h2 id="七-镜像发布">七、镜像发布</h2>
+<ol>
+<li><strong>镜像上传到 dockerhub</strong></li>
+</ol>
+<p><em><strong>注意点：镜像名字：dockerhub - 用户名 / 镜像名称，否则就会出现无权限提示</strong></em></p>
+<p>step1:docker login</p>
+<p>登录 dockerhub</p>
+<p>step2: docker push gy/imagename</p>
+<p>step3: 验证：</p>
+<p>方法一：登录 dockerhub 网站，找到提交的镜像</p>
+<p>方法二：删除本地的镜像，重新拉去 dockerhub 上新提交的镜像</p>
  </p>
                       </div>
                   </div>
@@ -226,9 +408,9 @@ ln –snf  /usr/share/nginx/html1/  ~/html
                           
                               <div class="next-post">
                                   <div class="next">下一篇</div>
-                                  <a href="https://ymf1234.github.io/post/python-di-san-fang-ku-pymysql-shi-yong">
+                                  <a href="https://ymf1234.github.io/post/composer">
                                       <h3 class="post-title">
-                                          python第三方库pymysql使用
+                                          Composer
                                       </h3>
                                   </a>
                               </div>
