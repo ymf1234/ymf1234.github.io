@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-09-29T03:04:25.965Z</updated>
+    <updated>2019-09-30T05:45:02.719Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -10,6 +10,28 @@
     <logo>https://ymf1234.github.io/images/avatar.png</logo>
     <icon>https://ymf1234.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea1</rights>
+    <entry>
+        <title type="html"><![CDATA[Docker之容器]]></title>
+        <id>https://ymf1234.github.io/post/docker-zhi-rong-qi</id>
+        <link href="https://ymf1234.github.io/post/docker-zhi-rong-qi">
+        </link>
+        <updated>2019-09-29T06:36:02.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="一-查看镜像">一、查看镜像</h4>
+<blockquote>
+<p>查看所有容器: docker images</p>
+</blockquote>
+<p><img src="http://chuantu.xyz/t6/702/1569809644x3703728804.png" alt="avatar"></p>
+<hr>
+<h4 id="二-启动容器">二、启动容器</h4>
+<blockquote>
+<p>常用参数</p>
+</blockquote>
+<pre><code class="language-shell">--name=&quot;容器的新名称&quot;：为容器指定一个名称；
+-d： 在后台运行，并返回容器ID，也即启动守护式容器；
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Docker基本学习]]></title>
         <id>https://ymf1234.github.io/post/docker-ji-ben-xue-xi</id>
@@ -39,7 +61,7 @@ ps -ef | grep docker
 <ol start="2">
 <li><strong>Docker流程</strong></li>
 </ol>
-<p>![avatar]https://cdn.learnku.com/uploads/images/201909/10/48012/tnlEDMYz0M.png!/fw/1240)</p>
+<p><img src="https://cdn.learnku.com/uploads/images/201909/10/48012/tnlEDMYz0M.png!/fw/1240" alt="avatar"></p>
 <p>3、<strong>给当前用户赋予执行 docker 命令权限</strong></p>
 <pre><code class="language-shell">#1、创建docker用户组
 sudo groupadd docker
@@ -377,7 +399,9 @@ ClientAliveCountMax 0
 <p>1、客户端每隔多少秒向服务发送一个心跳数据</p>
 <p>2、客户端多少秒没有相应，服务器自动断掉连接</p>
 <p>重启sshd服务</p>
-<p>#service sshd restart</p>
+<blockquote>
+<p>systemctl restart sshd.service</p>
+</blockquote>
 ]]></content>
     </entry>
     <entry>
