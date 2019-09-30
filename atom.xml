@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-09-30T06:36:58.389Z</updated>
+    <updated>2019-09-30T06:42:17.408Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -20,7 +20,7 @@
 <blockquote>
 <p>查看所有容器: docker images</p>
 </blockquote>
-<p><img src="http://chuantu.xyz/t6/702/1569809644x3703728804.png" alt="avatar"></p>
+<p><img src="http://chuantu.xyz/t6/702/1569825719x3703728804.png" alt="avatar"></p>
 <hr>
 <h4 id="二-启动容器">二、启动容器</h4>
 <blockquote>
