@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-09-30T06:42:17.408Z</updated>
+    <updated>2019-10-08T07:26:00.571Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -20,28 +20,89 @@
 <blockquote>
 <p>查看所有容器: docker images</p>
 </blockquote>
-<p><img src="http://chuantu.xyz/t6/702/1569825719x3703728804.png" alt="avatar"></p>
+<p><img src="https://thumbnail0.baidupcs.com/thumbnail/4dcedada14b8f0b2794c38eb6b46c3e5?fid=3744594663-250528-306399423113942&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-A9tep%2bZ4TOwlHeksmLSaDLmV1kk%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6353682530732195590&amp;dp-callid=0&amp;time=1569938400&amp;size=c1440_u900&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
 <hr>
-<h4 id="二-启动容器">二、启动容器</h4>
+<h4 id="二-运行容器">二、运行容器</h4>
 <blockquote>
 <p>常用参数</p>
 </blockquote>
-<pre><code class="language-shell">--name=&quot;容器的新名称&quot;：为容器指定一个名称；
+<pre><code class="language-shell">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+[OPTIONS] 说明(常用)：
+--name=&quot;容器的新名称&quot;：为容器指定一个名称；
 -d： 在后台运行，并返回容器ID，也即启动守护式容器；
 -i: 以交互模式运行容器
 -t: 为容器重新分配一个伪输入端口
 -P：随机端口映射
 -p：指定端口映射，有一些四种格式
         ip:hostPort:containerPort
-				ip::containerPort
-				hostPort:containerPort
-				containerPort
+        ip::containerPort
+        hostPort:containerPort
+        containerPort
 </code></pre>
-<p><img src="http://chuantu.xyz/t6/702/1569825081x2890173827.png" alt="avatar"></p>
+<p><img src="https://thumbnail0.baidupcs.com/thumbnail/63ab232ad2093621e0a36efb8a18f605?fid=3744594663-250528-124414478584929&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-jDyxQ5nzevVmY3m1KBNHcpkhH5M%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6378456508431022567&amp;dp-callid=0&amp;time=1570032000&amp;size=c1920_u1080&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
 <blockquote>
 <p>证明在容器里</p>
 </blockquote>
-<p><img src="http://chuantu.xyz/t6/702/1569825360x3661913030.png" alt="avatar"></p>
+<p><img src="https://thumbnail0.baidupcs.com/thumbnail/015fd08412ab4a1805a76733c952a177?fid=3744594663-250528-630462684253701&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-JOliN4eBFA1o5%2bdRgCqnf6Folt0%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6378178391594095999&amp;dp-callid=0&amp;time=1570032000&amp;size=c1920_u1080&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
+<blockquote>
+<p>退出容器</p>
+</blockquote>
+<pre><code>1、exit ： 容器停止退出
+1、ctrl + P +Q ： 容器不停止退出
+</code></pre>
+<h4 id="三-查看容器">三、查看容器</h4>
+<pre><code class="language-shell">docker ps [OPTIONS]
+
+[OPTIONS] 说明(常用)：
+-a: 列出当前所有在运行的容器 + 历史上运行过得
+-l: 显示最近创建的容器
+-n:显示最近n个穿件的容器
+-q:静默模式，显示容器编号
+--no-trunc:不截断输出
+</code></pre>
+<p><img src="https://thumbnail0.baidupcs.com/thumbnail/580d8ee96a372935126b973fc13c98b4?fid=3744594663-250528-665693632142358&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-U1HSphPP%2fDzoDMSP1OfsNcdusCE%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6433797545374791839&amp;dp-callid=0&amp;time=1570237200&amp;size=c1920_u1080&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
+<h4 id="四-启动容器">四、启动容器</h4>
+<pre><code class="language-shell">docker start  CONTAINER 
+
+例如： docker start 4050f42701ea
+</code></pre>
+<h4 id="五-停止容器">五、停止容器</h4>
+<pre><code class="language-shell">docker stop  CONTAINER 
+
+例如： docker stop 4050f42701ea
+
+
+docker kill CONTAINER  # 强制
+
+例如： docker kill 4050f42701ea
+</code></pre>
+<h4 id="五-重启容器">五、重启容器</h4>
+<pre><code class="language-shell">docker restart  CONTAINER 
+
+例如： docker restart 4050f42701ea
+</code></pre>
+<h4 id="六-删除容器">六、删除容器</h4>
+<pre><code class="language-shell">docker rm CONTAINER
+
+例如： docker rm 4050f42701ea
+
+
+# 一次性删除多个容器
+
+docker rm -f $(docker ps -a -q)
+
+docker ps -a -q | xargs docker rm
+</code></pre>
+<h4 id="七-重要">七、重要</h4>
+<h5 id="1-docker-run-d-容器名称容器id">1. docker run -d 容器名称/容器ID</h5>
+<p><img src="https://thumbnail0.baidupcs.com/thumbnail/beab20a80005e302e9a1a74aee1949c9?fid=3744594663-250528-95163840021578&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-tca0hBrZ88Jvb4oBlNW2TE%2fYTyc%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6508670304827637653&amp;dp-callid=0&amp;time=1570518000&amp;size=c1440_u900&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
+<blockquote>
+<p>使用镜像以后台模式启动一个容器：例如： docker run -d 2ca708c1c9cc
+<font color=red>重要</font>:  使用docker ps -a 进行查看，发现容器已经退出
+重要说明一点：<font color=red>Docker容器在后台运行，就必须有一个前台进程</font>
+容器运行的命令如果不是<font color=red>一直挂起的命令</font>（比如 运行top，tail），就会自动退出。</p>
+</blockquote>
 ]]></content>
     </entry>
     <entry>
