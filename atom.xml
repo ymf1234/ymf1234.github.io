@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-10-10T05:23:38.159Z</updated>
+    <updated>2019-10-10T05:32:03.151Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -21,16 +21,34 @@
 <li>在Linux下有几个操作命令的快捷键</li>
 </ol>
 <blockquote>
-<p>enter 执行命令。输入命令后记得回车，命令才生效。
-tab 自动补全。在写文件夹路径的时候，打出首字母直接将后续名称补全，遇到首字母相同的文件夹会展示出列表
-↑ 使用方向键的up键，可以找回上个执行的命令，并且可以一直向上查找历史命令，想查看所有历史命令使用 history命令
-ctrl + c 中断命令。在linux上执行命令遇到卡死、报错等执行不下去又无法退出的情况，请使用此命令。
-ctrl + z 中断命令。一般ctrl + c 无法进行中断操作的时候可以尝试下此命令。
-ctrl + insert 复制。复制选中内容。
-shift + insert 粘贴。粘贴剪切板中内容。
-ctrl + Backspace 向前删除。
-在输入命令时，有时退格键Backspace无法删除字符，它本身被当做一个字符输入了，使用此命令进行退格删除操作
-delete 向后删除。</p>
+<p>enter 执行命令。输入命令后记得回车，命令才生效。</p>
+</blockquote>
+<blockquote>
+<p>tab 自动补全。在写文件夹路径的时候，打出首字母直接将后续名称补全，遇到首字母相同的文件夹会展示出列表</p>
+</blockquote>
+<blockquote>
+<p>↑ 使用方向键的up键，可以找回上个执行的命令，并且可以一直向上查找历史命令，想查看所有历史命令使用 history命令</p>
+</blockquote>
+<blockquote>
+<p>ctrl + c 中断命令。在linux上执行命令遇到卡死、报错等执行不下去又无法退出的情况，请使用此命令。</p>
+</blockquote>
+<blockquote>
+<p>ctrl + z 中断命令。一般ctrl + c 无法进行中断操作的时候可以尝试下此命令。</p>
+</blockquote>
+<blockquote>
+<p>ctrl + insert 复制。复制选中内容。</p>
+</blockquote>
+<blockquote>
+<p>shift + insert 粘贴。粘贴剪切板中内容。</p>
+</blockquote>
+<blockquote>
+<p>ctrl + Backspace 向前删除。</p>
+</blockquote>
+<blockquote>
+<p>在输入命令时，有时退格键Backspace无法删除字符，它本身被当做一个字符输入了，使用此命令进行退格删除操作</p>
+</blockquote>
+<blockquote>
+<p>delete 向后删除。</p>
 </blockquote>
 <ol start="2">
 <li>查看日志文件时使用:</li>
