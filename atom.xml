@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ymf1234.github.io</id>
     <title>Gridea1</title>
-    <updated>2019-10-08T07:26:00.571Z</updated>
+    <updated>2019-10-10T05:23:38.159Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ymf1234.github.io"/>
     <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
@@ -10,6 +10,421 @@
     <logo>https://ymf1234.github.io/images/avatar.png</logo>
     <icon>https://ymf1234.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea1</rights>
+    <entry>
+        <title type="html"><![CDATA[Linux常用命令指南【上】]]></title>
+        <id>https://ymf1234.github.io/post/linux-chang-yong-ming-ling-zhi-nan-shang</id>
+        <link href="https://ymf1234.github.io/post/linux-chang-yong-ming-ling-zhi-nan-shang">
+        </link>
+        <updated>2019-10-08T09:57:46.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="一-常用快捷键">一、常用快捷键</h3>
+<ol>
+<li>在Linux下有几个操作命令的快捷键</li>
+</ol>
+<blockquote>
+<p>enter 执行命令。输入命令后记得回车，命令才生效。
+tab 自动补全。在写文件夹路径的时候，打出首字母直接将后续名称补全，遇到首字母相同的文件夹会展示出列表
+↑ 使用方向键的up键，可以找回上个执行的命令，并且可以一直向上查找历史命令，想查看所有历史命令使用 history命令
+ctrl + c 中断命令。在linux上执行命令遇到卡死、报错等执行不下去又无法退出的情况，请使用此命令。
+ctrl + z 中断命令。一般ctrl + c 无法进行中断操作的时候可以尝试下此命令。
+ctrl + insert 复制。复制选中内容。
+shift + insert 粘贴。粘贴剪切板中内容。
+ctrl + Backspace 向前删除。
+在输入命令时，有时退格键Backspace无法删除字符，它本身被当做一个字符输入了，使用此命令进行退格删除操作
+delete 向后删除。</p>
+</blockquote>
+<ol start="2">
+<li>查看日志文件时使用:</li>
+</ol>
+<blockquote>
+<p>ctrl + s 停止滚屏
+ctrl + q 恢复滚屏</p>
+</blockquote>
+<h3 id="二-帮助命令">二、 帮助命令</h3>
+<blockquote>
+<p>man 全方位的帮助命令，使用方式为 man [命令]，如</p>
+</blockquote>
+<pre><code class="language-shell">man ls
+</code></pre>
+<p>使用 :q 命令退出帮助界面</p>
+<blockquote>
+<p>help 常用帮助命令，使用方式为 [命令] --help，如</p>
+</blockquote>
+<pre><code class="language-shell">ls --help
+</code></pre>
+<h3 id="三-历史命令查看">三、历史命令查看</h3>
+<pre><code class="language-shell">history
+</code></pre>
+<h3 id="四-常用命令">四、常用命令</h3>
+<p><strong>1.1 文件及目录操作</strong>
+<strong>1.1.1 路径切换的好基友：cd、ls、ll、pwd</strong></p>
+<pre><code class="language-shell"># 进入主机根目录
+cd /
+
+# 进入用户根目录
+cd ~
+
+# 返回上级目录
+cd ../
+
+# 返回上次目录
+cd -
+
+# 使用绝对路径，从根目录开始,一层层找到XXX这个目录。/ 为根目录
+cd /xx/xx/xxx/XXX
+
+# 横向展示当前目录下所有文件及目录
+ls
+
+# 显示隐藏文件 + ls命令展示的内容 
+ls -a
+
+# 等同于ll，一般直接用ll命令。
+ls -l
+
+# 纵向展示当前目录下所有文件及目录，及权限信息
+ll
+
+# 显示隐藏文件 + ll命令展示的内容
+ll -a
+
+ # 将文件大小从单位bit转换为合适的单位展现，如kb、Mb、Gb，根据实际大小来。
+ # -h 这个参数在linux中很有用，基本所有需要统计大小的命令中都可以用它，如df -h, du -h,free -h。
+ll -h
+
+# 查看当前所在路径
+pwd
+
+</code></pre>
+<p><strong>1.1.2 文件创建：touch、mkdir</strong></p>
+<pre><code class="language-shell"># 在当前目录下创建一个xxx.txt空文件
+touch xxx.txt
+
+# 批量创建空文件
+touch /xxx/xxx/xxx{01..10}.txt
+</code></pre>
+<pre><code class="language-shell"># 在当前目录下创建一个空目录
+mkdir [目录名]
+</code></pre>
+<pre><code class="language-shell"># 多个目录同时创建，目录间以空格隔开，创建同级的多个目录
+mkdir 123 456 789
+
+# 如果想要创建一个多级子目录怎么办，那就使用下面的mkdir -p。
+# 多层目录同时创建，一次性在当前目录下创建xxx目录，在xxx目录下创建ccc目录，在ccc目录下创建vvv目录，在vvv目录下创建bbb目录。
+
+mkdir -p /xxx/ccc/vvv/bbb
+</code></pre>
+<p><strong>1.1.3 复制、移动和删除：cp、mv、rm</strong></p>
+<pre><code class="language-shell"># 将前者拷贝一份出来，变为后者。
+cp [待拷贝文件名] [拷贝后文件名]
+
+# 将前者拷贝一份出来，变为后者。文件如此，目录也是如此。
+cp [待拷贝目录] [目标目录]
+
+# 但是有时候目录下还有子目录，这个命令就不好用了，得用下面这个命令，cp -r/R。
+# -r/R 是什么意思？即递归。无限寻找当前目录下所有子目录。倾其所有，拷贝到目标路径下。
+cp -r [待拷贝目录] [目标目录]
+</code></pre>
+<pre><code class="language-shell"># 将前者的文件名改为后者的文件名
+mv [待拷贝文件名] [拷贝后文件名]
+
+# 将前者的文件名改为后者的文件名
+mv [待移动目录] [目标目录]
+</code></pre>
+<pre><code class="language-shell"># 删除文件。文件不存在会有报错提示。
+rm [文件名]
+
+# 删除文件。-f，忽略信息，不提示。
+rm -f [文件名]
+
+# 递归删除目录
+rm -rf [目录名]
+
+# 删除多个文件和目录
+rm -rf [文件1] [文件2] [目录1] [目录2]
+
+# 删除当前目录所有.log后缀结尾的文件
+rm -rf *.log
+
+# 删除所有log文件时会一一询问，这个命令一般不会用到，但有些情况下可能会需要。
+# 询问时，按 y 确认删除，n 不删除。
+rm -i *.log
+</code></pre>
+<p><strong>1.2 文件查看与编辑</strong>
+<strong>1.2.1 合并文件好帮手：cat</strong></p>
+<pre><code class="language-shell"># 输出文件所有内容到屏幕上
+cat [文件名]
+
+# 输出文件1、文件2所有内容到屏幕上
+cat [文件1] [文件2]
+
+# 将文件1、文件2合并，输出到文件3中，如果没有文件3会自动生成一个新的文件3
+cat [文件1] [文件2] &gt; [文件3]
+
+
+# 输出文件内容时加上行号
+cat -n [文件名]
+
+# 输出文件内容时显示所有隐藏字符
+cat -A [文件名]
+</code></pre>
+<p><strong>1.2.2 观察日志小能手：tail</strong></p>
+<blockquote>
+<p>tail 一般用来查看日志使用，显示文件最新追加的内容</p>
+</blockquote>
+<pre><code class="language-shell"># 不停地追加显示log文件的最后10行
+tail -f xxx.log
+
+
+# 加上-n参数，不停地追加显示log文件的最后1000行
+tail -fn1000 xxx.log
+</code></pre>
+<blockquote>
+<p>tail也可以同时显示多个文件内容，但是不推荐使用，如</p>
+</blockquote>
+<pre><code class="language-shell">tail -fn1000 xxx.log xxx2.log
+</code></pre>
+<blockquote>
+<p>如果显示文件不止一个，则在显示的每个文件前面加一个文件名标题</p>
+</blockquote>
+<p><strong>1.2.3 编辑文件我拿手：vi/vim</strong></p>
+<blockquote>
+<p>vim有几种模式，即normal模式、visual模式、编辑模式、命令模式。</p>
+</blockquote>
+<pre><code class="language-shell"># 默认进入normal模式
+vim [文件名]
+</code></pre>
+<blockquote>
+<p>normal模式下按下i、a、o、s，进入编辑模式，使用频度一般也是这个顺序。</p>
+</blockquote>
+<pre><code class="language-shell"># insert, 光标当前字符前插入
+i 
+
+# append, 光标当前字符后插入
+a
+
+# 下一行插入
+o
+
+# 不常用，删除当前字符并插入
+s
+</code></pre>
+<blockquote>
+<p>光标移动</p>
+</blockquote>
+<pre><code class="language-shell">  
+# 向左移动复制代码
+←
+ 
+# 向下移动复制代码
+↓
+ 
+# 向上移动复制代码
+↑
+ 
+# 向右移动复制代码
+→
+
+# 向下翻页复制代码
+ctrl + f
+
+# 向上翻页复制代码
+ctrl + b
+
+# 行首复制代码
+0
+
+# 行尾复制代码
+$
+
+# 空格键，一直向下移动一个字符。跟左方向键（→）的区别是，左方向键（→）只能在本行移动。
+space
+
+</code></pre>
+<blockquote>
+<p>如果觉得上下左右方向键不方便，还要移动手臂，可以在normal模式下，使用h、j、k、l键依次进行左、下、上、右操作。</p>
+</blockquote>
+<blockquote>
+<p>退出、保存，在normal模式下使用冒号（:） 进入底线命令模式</p>
+</blockquote>
+<pre><code class="language-shell"># 退出不保存
+:q
+
+# 强制退出不保存
+:q!
+
+
+# 退出保存
+:wq 
+
+# 强制退出保存
+:wq!
+</code></pre>
+<blockquote>
+<p>normal模式下的一些快捷键</p>
+</blockquote>
+<pre><code class="language-shell"># 大写g，移动到文末。
+G
+
+# n，数字，代表行号。100G则是移动到第100行。1G则是行首。
+nG
+
+# 移动到文首。同样效果还有1G。
+gg
+
+# 分别代表high、middle、low，即移动当前屏幕页的最上方、中间、最下方。
+H、M、L
+
+# 删除当前行，可连续按d删除。
+dd
+
+# n,数字，代表行号。ndd，删除当前行及之后的多少行，如100dd，删除当前及之后的100行
+ndd
+
+# 进入复制模式
+y
+
+# 复制当前行。
+yy
+
+# n,数字，代表行号。聪明的你相比已经知道了，如16yy，即复制当前行至16行的内容。
+nyy
+
+# 粘贴当前vim剪切板中内容。
+p
+
+ # 常用组合键，即在上面使用yy复制后，可立即使用p粘贴，或者移动到指定地点后按个 p，即把刚才的内容粘贴过来了。
+ yyp
+ 
+# 全选复制。看这个命令，到行首，按y进入复制模式，再移动光标到文末，然后可以按p粘贴了。当然，如果你的光标已经移动到相应位置，可以直接ggyGp。
+ggyG
+
+# 这里有个缺陷，这样的复制内容只能在vim中进行粘贴，一旦退出vim，剪切板中则无此内容了。那怎么办呢？ 看下面这个命令
+
+gg&quot;*yG、gg&quot;+yG   # 这两个全选复制的命令，可以将内容带出到vim之外。当然，一般用不到，只有某些特殊情况下会用到。
+
+</code></pre>
+<blockquote>
+<p>查找</p>
+</blockquote>
+<pre><code class="language-shell"># 即向下寻找xxxx这个字符串。按n会一直向下找。
+/xxxx
+
+# 即向上寻找 xxxx 这个字符串。按n会一直向上找。
+?xxxx
+
+# 配合/、?则会很有趣，/ + n,一直向下找，/ + N,一直向上找， ? + n，一直向上找， ? + N，一直向下找。
+n、N
+
+</code></pre>
+<blockquote>
+<p>替换</p>
+</blockquote>
+<pre><code class="language-shell"># 全局替换，将old字符替换成new
+:%s/old/new/g
+
+# 如果不想全局替换，而是指定行数
+:[n1],[n2]s/old/new/g
+
+#将1到10行的xxx替换成了ccc。
+例如： :1,10s/xxx/ccc/g
+</code></pre>
+<blockquote>
+<p>显示行号</p>
+</blockquote>
+<pre><code class="language-shell"># 显示行号
+:set number
+
+# 同上，nu即是number的简写
+:set nu
+:set nonu
+
+# # 查看文件格式，可能会展示foramt=dos，在windows下编辑然后上传到linux下的文件可能会存在一些格式问题，所以需要转换下文本格式，即下面的命令:set ff=unix
+:set ff
+
+# 设置文件格式，ff即format, 即文件设置为unix。可以设置后再用:set ff命令再看下
+:set ff=unix
+</code></pre>
+<p><strong>1.2.4 more、less</strong></p>
+<blockquote>
+<p>more</p>
+</blockquote>
+<pre><code class="language-shell">more [文件名]
+
+# 加参数f，-f 参数的含义为计算行数时，以实际上行数为准（有些单行字数太长的会被认为两行或以上）
+more -f [文件名]
+
+# 向下滚动一屏,f键效果一样，但一般使用空格键，比较方便
+空格键
+
+# 向上滚动一屏
+b
+
+# 查看当前行号
+=
+
+# 出当前文件名 及 行号
+:f
+
+# 退出more命令, ctrl + c也可以退出
+q
+
+# 查看指定行号以后的内容
+more +[num] [文件名]
+例如： more +1000 xxx.txt
+
+
+# 查看指定行号以前的内容，这个命令一般不用，主要用+num。这个命令如果用的话一般会作为导出使用。
+more -[num] [文件名]
+例如：more -1000 xxx.txt
+</code></pre>
+<blockquote>
+<p>less</p>
+</blockquote>
+<pre><code class="language-shell"># 基本查看命令
+less [文件名]
+
+# 类似more命令，显示百分比
+less -m [文件名]
+
+# 显示行号
+less -N [文件名]
+
+
+# 退出less命令
+q
+
+# 向下移动半屏
+d
+
+# 向上移动半屏
+u
+
+# 向下移动一行
+j
+
+# 向上移动一行
+k
+
+# 向下滚动一屏,f键效果一样，但一般使用空格键，比较方便
+空格键
+
+# 向上滚动一屏
+b
+
+# 输出当前文件名 及 行号、百分比
+=
+
+# 输出当前文件名 及 行号、百分比
+: f
+
+# 配合n键，从上往下查所有
+/[查找字符]
+
+# 配合n键，从下往下查所有
+?[查找字符]
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Docker之容器]]></title>
         <id>https://ymf1234.github.io/post/docker-zhi-rong-qi</id>
@@ -20,7 +435,7 @@
 <blockquote>
 <p>查看所有容器: docker images</p>
 </blockquote>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/4dcedada14b8f0b2794c38eb6b46c3e5?fid=3744594663-250528-306399423113942&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-A9tep%2bZ4TOwlHeksmLSaDLmV1kk%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6353682530732195590&amp;dp-callid=0&amp;time=1569938400&amp;size=c1440_u900&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
+<p><img src="https://raw.githubusercontent.com/ymf1234/images/master/docker/WeChatbeab20a80005e302e9a1a74aee1949c9.png" alt="avatar"></p>
 <hr>
 <h4 id="二-运行容器">二、运行容器</h4>
 <blockquote>
@@ -40,11 +455,11 @@
         hostPort:containerPort
         containerPort
 </code></pre>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/63ab232ad2093621e0a36efb8a18f605?fid=3744594663-250528-124414478584929&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-jDyxQ5nzevVmY3m1KBNHcpkhH5M%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6378456508431022567&amp;dp-callid=0&amp;time=1570032000&amp;size=c1920_u1080&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
+<p><img src="https://raw.githubusercontent.com/ymf1234/images/master/docker/WeChat015fd08412ab4a1805a76733c952a177.png" alt="avatar"></p>
 <blockquote>
 <p>证明在容器里</p>
 </blockquote>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/015fd08412ab4a1805a76733c952a177?fid=3744594663-250528-630462684253701&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-JOliN4eBFA1o5%2bdRgCqnf6Folt0%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6378178391594095999&amp;dp-callid=0&amp;time=1570032000&amp;size=c1920_u1080&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
+<p><img src="https://raw.githubusercontent.com/ymf1234/images/master/docker/WeChat015fd08412ab4a1805a76733c952a177.png" alt="avatar"></p>
 <blockquote>
 <p>退出容器</p>
 </blockquote>
@@ -61,7 +476,7 @@
 -q:静默模式，显示容器编号
 --no-trunc:不截断输出
 </code></pre>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/580d8ee96a372935126b973fc13c98b4?fid=3744594663-250528-665693632142358&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-U1HSphPP%2fDzoDMSP1OfsNcdusCE%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6433797545374791839&amp;dp-callid=0&amp;time=1570237200&amp;size=c1920_u1080&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
+<p><img src="https://raw.githubusercontent.com/ymf1234/images/master/docker/WeChat580d8ee96a372935126b973fc13c98b4.png" alt="avatar"></p>
 <h4 id="四-启动容器">四、启动容器</h4>
 <pre><code class="language-shell">docker start  CONTAINER 
 
@@ -95,14 +510,19 @@ docker rm -f $(docker ps -a -q)
 docker ps -a -q | xargs docker rm
 </code></pre>
 <h4 id="七-重要">七、重要</h4>
-<h5 id="1-docker-run-d-容器名称容器id">1. docker run -d 容器名称/容器ID</h5>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/beab20a80005e302e9a1a74aee1949c9?fid=3744594663-250528-95163840021578&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-tca0hBrZ88Jvb4oBlNW2TE%2fYTyc%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=6508670304827637653&amp;dp-callid=0&amp;time=1570518000&amp;size=c1440_u900&amp;quality=90&amp;vuk=3744594663&amp;ft=image&amp;autopolicy=1" alt="avatar"></p>
+<h5 id="1启动守护式容器-docker-run-d-容器名称容器id">1.启动守护式容器: docker run -d 容器名称/容器ID</h5>
+<p><img src="https://raw.githubusercontent.com/ymf1234/images/master/docker/WeChatbeab20a80005e302e9a1a74aee1949c9.png" alt="avatar"></p>
 <blockquote>
 <p>使用镜像以后台模式启动一个容器：例如： docker run -d 2ca708c1c9cc
 <font color=red>重要</font>:  使用docker ps -a 进行查看，发现容器已经退出
 重要说明一点：<font color=red>Docker容器在后台运行，就必须有一个前台进程</font>
 容器运行的命令如果不是<font color=red>一直挂起的命令</font>（比如 运行top，tail），就会自动退出。</p>
 </blockquote>
+<h5 id="2查看容器日志docker-logs-f-t-tail-容器id">2.查看容器日志:docker logs -f -t --tail 容器ID</h5>
+<pre><code class="language-shell">-t: 加入时间戳
+-f: 跟随最新的日志打印
+--tail: 数字 显示最后多少条
+</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -340,7 +760,7 @@ docker rm $(docker container ls -f &quot;status=exited&quot; -q)
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Linux命令]]></title>
+        <title type="html"><![CDATA[Linux命令之ln]]></title>
         <id>https://ymf1234.github.io/post/linux-ming-ling</id>
         <link href="https://ymf1234.github.io/post/linux-ming-ling">
         </link>
