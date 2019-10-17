@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://ymf1234.github.io</id>
+    <id>http://blog.yumengfei.cn/</id>
     <title>Gridea1</title>
-    <updated>2019-10-10T05:32:03.151Z</updated>
+    <updated>2019-10-17T05:57:11.277Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://ymf1234.github.io"/>
-    <link rel="self" href="https://ymf1234.github.io/atom.xml"/>
+    <link rel="alternate" href="http://blog.yumengfei.cn/"/>
+    <link rel="self" href="http://blog.yumengfei.cn//atom.xml"/>
     <subtitle>php docker mysql python</subtitle>
-    <logo>https://ymf1234.github.io/images/avatar.png</logo>
-    <icon>https://ymf1234.github.io/favicon.ico</icon>
+    <logo>http://blog.yumengfei.cn//images/avatar.png</logo>
+    <icon>http://blog.yumengfei.cn//favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea1</rights>
     <entry>
         <title type="html"><![CDATA[Linux常用命令指南【上】]]></title>
-        <id>https://ymf1234.github.io/post/linux-chang-yong-ming-ling-zhi-nan-shang</id>
-        <link href="https://ymf1234.github.io/post/linux-chang-yong-ming-ling-zhi-nan-shang">
+        <id>http://blog.yumengfei.cn//post/linux-chang-yong-ming-ling-zhi-nan-shang</id>
+        <link href="http://blog.yumengfei.cn//post/linux-chang-yong-ming-ling-zhi-nan-shang">
         </link>
         <updated>2019-10-08T09:57:46.000Z</updated>
         <content type="html"><![CDATA[<h3 id="一-常用快捷键">一、常用快捷键</h3>
@@ -441,12 +441,13 @@ b
 # 配合n键，从下往下查所有
 ?[查找字符]
 </code></pre>
+<p><strong>1.2.5 不打开文件编辑：sed</strong></p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Docker之容器]]></title>
-        <id>https://ymf1234.github.io/post/docker-zhi-rong-qi</id>
-        <link href="https://ymf1234.github.io/post/docker-zhi-rong-qi">
+        <id>http://blog.yumengfei.cn//post/docker-zhi-rong-qi</id>
+        <link href="http://blog.yumengfei.cn//post/docker-zhi-rong-qi">
         </link>
         <updated>2019-09-29T06:36:02.000Z</updated>
         <content type="html"><![CDATA[<h4 id="一-查看镜像">一、查看镜像</h4>
@@ -545,8 +546,8 @@ docker ps -a -q | xargs docker rm
     </entry>
     <entry>
         <title type="html"><![CDATA[Docker基本学习]]></title>
-        <id>https://ymf1234.github.io/post/docker-ji-ben-xue-xi</id>
-        <link href="https://ymf1234.github.io/post/docker-ji-ben-xue-xi">
+        <id>http://blog.yumengfei.cn//post/docker-ji-ben-xue-xi</id>
+        <link href="http://blog.yumengfei.cn//post/docker-ji-ben-xue-xi">
         </link>
         <updated>2019-09-29T02:18:26.000Z</updated>
         <content type="html"><![CDATA[<h2 id="一-安装docker">一、安装Docker</h2>
@@ -767,8 +768,8 @@ docker rm $(docker container ls -f &quot;status=exited&quot; -q)
     </entry>
     <entry>
         <title type="html"><![CDATA[Composer]]></title>
-        <id>https://ymf1234.github.io/post/composer</id>
-        <link href="https://ymf1234.github.io/post/composer">
+        <id>http://blog.yumengfei.cn//post/composer</id>
+        <link href="http://blog.yumengfei.cn//post/composer">
         </link>
         <updated>2019-09-27T09:13:07.000Z</updated>
         <content type="html"><![CDATA[<h1 id="composer查看系统全局配置">composer查看系统全局配置：</h1>
@@ -779,8 +780,8 @@ docker rm $(docker container ls -f &quot;status=exited&quot; -q)
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux命令之ln]]></title>
-        <id>https://ymf1234.github.io/post/linux-ming-ling</id>
-        <link href="https://ymf1234.github.io/post/linux-ming-ling">
+        <id>http://blog.yumengfei.cn//post/linux-ming-ling</id>
+        <link href="http://blog.yumengfei.cn//post/linux-ming-ling">
         </link>
         <updated>2019-09-27T06:55:58.000Z</updated>
         <content type="html"><![CDATA[<h3 id="ln命令创建链接以及链接的删除和更新">ln命令创建链接以及链接的删除和更新</h3>
@@ -825,8 +826,8 @@ ln –snf  /usr/share/nginx/html1/  ~/html
     </entry>
     <entry>
         <title type="html"><![CDATA[python第三方库pymysql使用]]></title>
-        <id>https://ymf1234.github.io/post/python-di-san-fang-ku-pymysql-shi-yong</id>
-        <link href="https://ymf1234.github.io/post/python-di-san-fang-ku-pymysql-shi-yong">
+        <id>http://blog.yumengfei.cn//post/python-di-san-fang-ku-pymysql-shi-yong</id>
+        <link href="http://blog.yumengfei.cn//post/python-di-san-fang-ku-pymysql-shi-yong">
         </link>
         <updated>2019-09-27T06:22:47.000Z</updated>
         <content type="html"><![CDATA[<h1 id="连接数据库">连接数据库</h1>
@@ -839,8 +840,8 @@ a.cursor()
     </entry>
     <entry>
         <title type="html"><![CDATA[Docker基本概念]]></title>
-        <id>https://ymf1234.github.io/post/docker-ji-ben-gai-nian</id>
-        <link href="https://ymf1234.github.io/post/docker-ji-ben-gai-nian">
+        <id>http://blog.yumengfei.cn//post/docker-ji-ben-gai-nian</id>
+        <link href="http://blog.yumengfei.cn//post/docker-ji-ben-gai-nian">
         </link>
         <updated>2019-09-27T04:59:48.000Z</updated>
         <content type="html"><![CDATA[<h1 id="镜像">镜像</h1>
@@ -893,8 +894,8 @@ a.cursor()
     </entry>
     <entry>
         <title type="html"><![CDATA[阿里云服务器ssh经常一段时间就断掉解决办法]]></title>
-        <id>https://ymf1234.github.io/post/a-li-yun-fu-wu-qi-ssh-jing-chang-yi-duan-shi-jian-jiu-duan-diao-jie-jue-ban-fa</id>
-        <link href="https://ymf1234.github.io/post/a-li-yun-fu-wu-qi-ssh-jing-chang-yi-duan-shi-jian-jiu-duan-diao-jie-jue-ban-fa">
+        <id>http://blog.yumengfei.cn//post/a-li-yun-fu-wu-qi-ssh-jing-chang-yi-duan-shi-jian-jiu-duan-diao-jie-jue-ban-fa</id>
+        <link href="http://blog.yumengfei.cn//post/a-li-yun-fu-wu-qi-ssh-jing-chang-yi-duan-shi-jian-jiu-duan-diao-jie-jue-ban-fa">
         </link>
         <updated>2019-09-25T07:39:08.000Z</updated>
         <content type="html"><![CDATA[<h1 id="vim-etcsshsshd_config">vim /etc/ssh/sshd_config</h1>
@@ -917,8 +918,8 @@ ClientAliveCountMax 0
     </entry>
     <entry>
         <title type="html"><![CDATA[Angular创建组件]]></title>
-        <id>https://ymf1234.github.io/post/angular-chuang-jian-zu-jian</id>
-        <link href="https://ymf1234.github.io/post/angular-chuang-jian-zu-jian">
+        <id>http://blog.yumengfei.cn//post/angular-chuang-jian-zu-jian</id>
+        <link href="http://blog.yumengfei.cn//post/angular-chuang-jian-zu-jian">
         </link>
         <updated>2019-09-11T05:38:55.000Z</updated>
         <content type="html"><![CDATA[<h1 id="创建组件">创建组件</h1>
@@ -1008,8 +1009,8 @@ UPDATE src/app/module-core/core.module.ts (4539 bytes)
     </entry>
     <entry>
         <title type="html"><![CDATA[Centos 7安装MongoDB]]></title>
-        <id>https://ymf1234.github.io/post/centos-7-an-zhuang-mongodb</id>
-        <link href="https://ymf1234.github.io/post/centos-7-an-zhuang-mongodb">
+        <id>http://blog.yumengfei.cn//post/centos-7-an-zhuang-mongodb</id>
+        <link href="http://blog.yumengfei.cn//post/centos-7-an-zhuang-mongodb">
         </link>
         <updated>2019-09-05T13:57:01.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="安装mongodb">安装Mongodb</h2>
